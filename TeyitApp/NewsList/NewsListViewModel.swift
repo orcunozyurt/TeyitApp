@@ -16,13 +16,30 @@ class NewsListViewModel: ObservableObject, Identifiable {
     private var disposables = Set<AnyCancellable>()
     
     init(network: NetworkServiceProtocol) {
-      self.network = network
+        self.network = network
+        fetchNews()
     }
     
     func fetchNews() {
+        
         network.fetchNews()
             .map { response in
-                response.map()
-        }
+                response.map(NewsItemViewModel.init)
+            }
+        .receive(on: DispatchQueue.main)
+        .sink(receiveCompletion: { [weak self] value in
+            guard let self = self else { return }
+            switch value {
+            case .failure:
+              self.dataSource = []
+            case .finished:
+              break
+            }
+        }, receiveValue: { [weak self] data in
+            guard let self = self else { return }
+            self.dataSource = data
+        })
+        .store(in: &disposables)
+        
     }
 }

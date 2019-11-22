@@ -9,13 +9,39 @@
 import SwiftUI
 
 struct NewsListView: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @ObservedObject var viewModel: NewsListViewModel
+
+    init(viewModel: NewsListViewModel) {
+      self.viewModel = viewModel
     }
+
+    var body: some View {
+        NavigationView {
+            List {
+                if viewModel.dataSource.isEmpty {
+                    emptySection
+                } else {
+                    newsListSection
+                }
+            }
+            .listStyle(GroupedListStyle())
+            .navigationBarTitle("News List")
+        }
+    }
+
 }
 
-struct NewsListView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewsListView()
+private extension NewsListView {
+    var newsListSection: some View {
+        Section {
+            ForEach(viewModel.dataSource, content: NewsItemView.init(viewModel:))
+        }
+    }
+    
+    var emptySection: some View {
+      Section {
+        Text("No results")
+          .foregroundColor(.gray)
+      }
     }
 }

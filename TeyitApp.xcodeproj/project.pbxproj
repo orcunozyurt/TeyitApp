@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -27,6 +27,7 @@
 		1E9FA9252387490300A05A8F /* NewsDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA9242387490300A05A8F /* NewsDetailViewModel.swift */; };
 		1E9FA9272387495400A05A8F /* NewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA9262387495400A05A8F /* NewsItemView.swift */; };
 		1E9FA9292387496700A05A8F /* NewsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA9282387496700A05A8F /* NewsItemViewModel.swift */; };
+		FEBD91132387FC3100B71BAE /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FEBD91122387FC3100B71BAE /* KingfisherSwiftUI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBD91132387FC3100B71BAE /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,6 +222,9 @@
 			dependencies = (
 			);
 			name = TeyitApp;
+			packageProductDependencies = (
+				FEBD91122387FC3100B71BAE /* KingfisherSwiftUI */,
+			);
 			productName = TeyitApp;
 			productReference = 1E9FA8D723872FE600A05A8F /* TeyitApp.app */;
 			productType = "com.apple.product-type.application";
@@ -292,6 +297,9 @@
 				Base,
 			);
 			mainGroup = 1E9FA8CE23872FE600A05A8F;
+			packageReferences = (
+				FEBD91112387FC3100B71BAE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 1E9FA8D823872FE600A05A8F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -668,6 +676,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FEBD91112387FC3100B71BAE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.10.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FEBD91122387FC3100B71BAE /* KingfisherSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEBD91112387FC3100B71BAE /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 1E9FA8CF23872FE600A05A8F /* Project object */;
 }
