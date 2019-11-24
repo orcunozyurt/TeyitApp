@@ -18,8 +18,7 @@ struct NewsDetailView: View {
     }
     
     var body: some View {
-//        Text(viewModel.claim)
-//            .onAppear(perform: viewModel.fetchDetails)
+
         ScrollView(content: content)
             .onAppear(perform: viewModel.fetchDetails)
             .padding()
