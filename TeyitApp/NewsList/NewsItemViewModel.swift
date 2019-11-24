@@ -11,9 +11,11 @@ import SwiftUI
 
 class NewsItemViewModel: Identifiable {
     private let item: News
+    private let network: NetworkServiceProtocol
 
-    init(item: News) {
-      self.item = item
+    init(item: News, network: NetworkServiceProtocol) {
+        self.item = item
+        self.network = network
     }
     
     var title: String {
@@ -43,4 +45,12 @@ class NewsItemViewModel: Identifiable {
     var sourceURL: URL {
         return item.link!
     }
+}
+
+extension NewsItemViewModel {
+  var detailsView: some View {
+    let viewModel_details = NewsDetailViewModel(url_slug: self.slug, network: self.network)
+    return NewsDetailView(viewModel: viewModel_details)
+    
+  }
 }

@@ -21,25 +21,25 @@ class NewsListViewModel: ObservableObject, Identifiable {
     }
     
     func fetchNews() {
-        
         network.fetchNews()
             .map { response in
-                response.map(NewsItemViewModel.init)
+                response.map { item in
+                    NewsItemViewModel(item: item, network: self.network)
+                }
             }
-        .receive(on: DispatchQueue.main)
-        .sink(receiveCompletion: { [weak self] value in
-            guard let self = self else { return }
-            switch value {
-            case .failure:
-              self.dataSource = []
-            case .finished:
-              break
-            }
-        }, receiveValue: { [weak self] data in
-            guard let self = self else { return }
-            self.dataSource = data
-        })
-        .store(in: &disposables)
-        
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { [weak self] value in
+                guard let self = self else { return }
+                switch value {
+                case .failure:
+                  self.dataSource = []
+                case .finished:
+                  break
+                }
+            }, receiveValue: { [weak self] data in
+                guard let self = self else { return }
+                self.dataSource = data
+            })
+            .store(in: &disposables)
     }
 }

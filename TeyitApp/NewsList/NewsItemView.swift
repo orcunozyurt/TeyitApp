@@ -17,27 +17,45 @@ struct NewsItemView: View {
     }
     
     var body: some View {
-      VStack {
-        KFImage(URL(string: viewModel.thumbnail))
-        
-        VStack {
-            Text("\(viewModel.title)")
-            Text("\(viewModel.author)")
+        NavigationLink(destination: viewModel.detailsView) {
+            VStack {
+                       KFImage(URL(string: viewModel.thumbnail))
+                       .resizable()
+                       .aspectRatio(contentMode: .fit)
+                       .shadow(radius: 5)
+            
+                       HStack {
+                           VStack(alignment: .leading) {
+                            Text(viewModel.date)
+                                .font(.headline)
+                                .foregroundColor(.secondary)
+                                .padding(.bottom, 5)
+                            
+                            Text(viewModel.title)
+                               .font(.body)
+                               .fontWeight(.black)
+                               .foregroundColor(.primary)
+                               .lineLimit(5)
+                                .padding(.bottom, 15)
+                            
+                            Text(viewModel.author.uppercased())
+                               .font(.caption)
+                               .foregroundColor(.secondary)
+                           }
+                           .layoutPriority(100)
+            
+                           Spacer()
+                       }
+                       .padding()
+                   }
+                   .cornerRadius(10)
+                   .overlay(
+                       RoundedRectangle(cornerRadius: 10)
+                           .stroke(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), lineWidth: 1)
+                   )
+                   .padding([.top, .horizontal])
         }
-        
-        VStack(alignment: .leading) {
-          Text("\(viewModel.date)")
-            .font(.body)
-          Text("\(viewModel.sourceURL)")
-            .font(.footnote)
-        }
-          .padding(.leading, 8)
-
-        Spacer()
-
-        Text("\(viewModel.slug)°")
-          .font(.title)
-      }
-    }
+           
+       }
 }
 

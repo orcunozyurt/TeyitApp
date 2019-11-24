@@ -12,7 +12,8 @@ struct NewsListView: View {
     @ObservedObject var viewModel: NewsListViewModel
 
     init(viewModel: NewsListViewModel) {
-      self.viewModel = viewModel
+        self.viewModel = viewModel
+        UITableView.appearance().separatorStyle = .none
     }
 
     var body: some View {
@@ -25,7 +26,7 @@ struct NewsListView: View {
                 }
             }
             .listStyle(GroupedListStyle())
-            .navigationBarTitle("News List")
+            .navigationBarTitle("Teyit")
         }
     }
 

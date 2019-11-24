@@ -9,6 +9,11 @@
 import Foundation
 
 struct NewsDetail: Decodable {
-    
-    
+    var title: String?
+    var author: String?
+    var claim: String?
+    var proven: Bool?
+    var images: [String]?
+    var date: String?
+    var content: String?
 }
