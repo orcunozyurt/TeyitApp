@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1E9FA8DB23872FE600A05A8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA8DA23872FE600A05A8F /* AppDelegate.swift */; };
 		1E9FA8DD23872FE600A05A8F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA8DC23872FE600A05A8F /* SceneDelegate.swift */; };
-		1E9FA8DF23872FE600A05A8F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA8DE23872FE600A05A8F /* ContentView.swift */; };
 		1E9FA8E123872FE800A05A8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E9FA8E023872FE800A05A8F /* Assets.xcassets */; };
 		1E9FA8E423872FE800A05A8F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1E9FA8E323872FE800A05A8F /* Preview Assets.xcassets */; };
 		1E9FA8E723872FE800A05A8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1E9FA8E523872FE800A05A8F /* LaunchScreen.storyboard */; };
@@ -51,7 +50,6 @@
 		1E9FA8D723872FE600A05A8F /* TeyitApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeyitApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1E9FA8DA23872FE600A05A8F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1E9FA8DC23872FE600A05A8F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1E9FA8DE23872FE600A05A8F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1E9FA8E023872FE800A05A8F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1E9FA8E323872FE800A05A8F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1E9FA8E623872FE800A05A8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +129,6 @@
 				1E9FA90A2387339400A05A8F /* Models */,
 				1E9FA8DA23872FE600A05A8F /* AppDelegate.swift */,
 				1E9FA8DC23872FE600A05A8F /* SceneDelegate.swift */,
-				1E9FA8DE23872FE600A05A8F /* ContentView.swift */,
 				1E9FA8E023872FE800A05A8F /* Assets.xcassets */,
 				1E9FA8E523872FE800A05A8F /* LaunchScreen.storyboard */,
 				1E9FA8E823872FE800A05A8F /* Info.plist */,
@@ -352,7 +349,6 @@
 				1E9FA921238748CE00A05A8F /* NewsListView.swift in Sources */,
 				1E9FA9272387495400A05A8F /* NewsItemView.swift in Sources */,
 				1E9FA91B238739F800A05A8F /* CustomError.swift in Sources */,
-				1E9FA8DF23872FE600A05A8F /* ContentView.swift in Sources */,
 				1E9FA91F238748B400A05A8F /* NewsListViewModel.swift in Sources */,
 				1E9FA9112387343400A05A8F /* NetworkServiceProtocol.swift in Sources */,
 				1E9FA923238748F000A05A8F /* NewsDetailView.swift in Sources */,
