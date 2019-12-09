@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import SwiftUIPullToRefresh
 
 struct NewsListView: View {
     @ObservedObject var viewModel: NewsListViewModel
@@ -17,17 +18,17 @@ struct NewsListView: View {
     }
 
     var body: some View {
-        NavigationView {
-            List {
-                if viewModel.dataSource.isEmpty {
-                    emptySection
+        
+            RefreshableNavigationView(title: "Teyit", action:{
+                self.viewModel.fetchNews()
+            }){
+                if self.viewModel.dataSource.isEmpty {
+                    self.emptySection
                 } else {
-                    newsListSection
+                    self.newsListSection
                 }
             }
-            .listStyle(GroupedListStyle())
-            .navigationBarTitle("Teyit")
-        }
+            
     }
 
 }

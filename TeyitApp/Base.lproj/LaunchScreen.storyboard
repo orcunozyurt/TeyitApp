@@ -15,12 +15,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="t.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="CIL-Ie-ErC">
-                                <rect key="frame" x="87" y="384" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="sGw-N6-E2i">
+                                <rect key="frame" x="0.0" y="144" width="414" height="100"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9mi-bx-WHk">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="yB5-bu-jvV"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemGroupedBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="sGw-N6-E2i" secondAttribute="trailing" id="8vh-tr-zSc"/>
+                            <constraint firstItem="sGw-N6-E2i" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="nED-O4-LfU"/>
+                            <constraint firstItem="sGw-N6-E2i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="wct-G0-NZ3"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY" colorLabel="IBBuiltInLabel-Red"/>
                     </view>
                 </viewController>
@@ -29,7 +43,4 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="t.circle.fill" catalog="system" width="64" height="60"/>
-    </resources>
 </document>

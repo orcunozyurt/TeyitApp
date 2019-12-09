@@ -14,13 +14,19 @@ class NewsListViewModel: ObservableObject, Identifiable {
     
     private let network: NetworkServiceProtocol
     private var disposables = Set<AnyCancellable>()
+    private var isLoading: Bool = false
     
     init(network: NetworkServiceProtocol) {
         self.network = network
         fetchNews()
     }
     
+    func isLoadingActive() -> Bool {
+        return self.isLoading
+    }
+    
     func fetchNews() {
+        isLoading = true
         network.fetchNews()
             .map { response in
                 response.map { item in
@@ -33,11 +39,14 @@ class NewsListViewModel: ObservableObject, Identifiable {
                 switch value {
                 case .failure:
                   self.dataSource = []
+                  self.isLoading = false
                 case .finished:
+                    self.isLoading = false
                   break
                 }
             }, receiveValue: { [weak self] data in
                 guard let self = self else { return }
+                self.isLoading = false
                 self.dataSource = data
             })
             .store(in: &disposables)

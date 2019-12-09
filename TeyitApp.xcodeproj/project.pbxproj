@@ -26,6 +26,7 @@
 		1E9FA9272387495400A05A8F /* NewsItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA9262387495400A05A8F /* NewsItemView.swift */; };
 		1E9FA9292387496700A05A8F /* NewsItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E9FA9282387496700A05A8F /* NewsItemViewModel.swift */; };
 		1EC62EAE23947BD2001D7075 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1EC62EAB23947AD0001D7075 /* Assets.xcassets */; };
+		1EC62EB1239C3FDE001D7075 /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 1EC62EB0239C3FDE001D7075 /* SwiftUIPullToRefresh */; };
 		FEBD91132387FC3100B71BAE /* KingfisherSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FEBD91122387FC3100B71BAE /* KingfisherSwiftUI */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1EC62EB1239C3FDE001D7075 /* SwiftUIPullToRefresh in Frameworks */,
 				FEBD91132387FC3100B71BAE /* KingfisherSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -221,6 +223,7 @@
 			name = TeyitApp;
 			packageProductDependencies = (
 				FEBD91122387FC3100B71BAE /* KingfisherSwiftUI */,
+				1EC62EB0239C3FDE001D7075 /* SwiftUIPullToRefresh */,
 			);
 			productName = TeyitApp;
 			productReference = 1E9FA8D723872FE600A05A8F /* TeyitApp.app */;
@@ -296,6 +299,7 @@
 			mainGroup = 1E9FA8CE23872FE600A05A8F;
 			packageReferences = (
 				FEBD91112387FC3100B71BAE /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				1EC62EAF239C3FDE001D7075 /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */,
 			);
 			productRefGroup = 1E9FA8D823872FE600A05A8F /* Products */;
 			projectDirPath = "";
@@ -676,6 +680,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		1EC62EAF239C3FDE001D7075 /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/SwiftUI-PullToRefresh";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		FEBD91112387FC3100B71BAE /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher";
@@ -687,6 +699,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		1EC62EB0239C3FDE001D7075 /* SwiftUIPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1EC62EAF239C3FDE001D7075 /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */;
+			productName = SwiftUIPullToRefresh;
+		};
 		FEBD91122387FC3100B71BAE /* KingfisherSwiftUI */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = FEBD91112387FC3100B71BAE /* XCRemoteSwiftPackageReference "Kingfisher" */;
