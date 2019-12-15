@@ -11,10 +11,11 @@ import Combine
 
 class NewsListViewModel: ObservableObject, Identifiable {
     @Published var dataSource: [NewsItemViewModel] = []
+    @Published var isLoading: Bool = false
     
     private let network: NetworkServiceProtocol
     private var disposables = Set<AnyCancellable>()
-    private var isLoading: Bool = false
+    
     
     init(network: NetworkServiceProtocol) {
         self.network = network

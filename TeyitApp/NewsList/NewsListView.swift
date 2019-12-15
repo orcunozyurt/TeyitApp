@@ -22,11 +22,17 @@ struct NewsListView: View {
             RefreshableNavigationView(title: "Teyit", action:{
                 self.viewModel.fetchNews()
             }){
-                if self.viewModel.dataSource.isEmpty {
-                    self.emptySection
+                
+                if self.viewModel.isLoading {
+                    self.loadingSection
                 } else {
-                    self.newsListSection
+                    if self.viewModel.dataSource.isEmpty {
+                        self.emptySection
+                    } else {
+                        self.newsListSection
+                    }
                 }
+                
             }
             
     }
@@ -41,6 +47,13 @@ private extension NewsListView {
     }
     
     var emptySection: some View {
+      Section {
+        Text("No results")
+          .foregroundColor(.gray)
+      }
+    }
+    
+    var loadingSection: some View {
       Section {
         Text("No results")
           .foregroundColor(.gray)
